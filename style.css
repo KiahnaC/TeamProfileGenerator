@@ -1,0 +1,15 @@
+.nav-container{
+    border: black;
+    border-style: solid;
+    height: 20vh;
+    background-color: rgb(235, 121, 121)
+}
+.nav-bar{
+    margin-top: 50px;
+    font-size: xx-large;
+    text-align: center;
+    font-weight: bolder;
+ color: snow;
+   
+    
+}
