@@ -6,5 +6,6 @@ USER should recieve an HTML doc with the cmployees info they created.
 
 GitHub: https://github.com/KiahnaC/TeamProfileGenerator
 
-https://user-images.githubusercontent.com/88855915/156487494-72ce21f7-5251-43b4-a3a4-3504cfd6bbd8.mov
 
+
+[Screen Recording 2022-03-02 at 6.00.09 PM.zip](https://github.com/KiahnaC/TeamProfileGenerator/files/8174598/Screen.Recording.2022-03-02.at.6.00.09.PM.zip)
