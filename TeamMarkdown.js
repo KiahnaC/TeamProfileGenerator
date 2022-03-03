@@ -162,6 +162,8 @@ const mana = []
 const eng = []
 const int = []
 
+function employeeCards(){
+
 for (var i = 0; i < teamMember.length; i++) {
              if (teamMember[i]=== "Manager") {
              mana.push(teamMember[i])
@@ -171,6 +173,23 @@ for (var i = 0; i < teamMember.length; i++) {
               int.push(teamMember[i])
             }
             
+            function manaCards(eng) {
+              let manaHTML = []
+              for (let i = 0; i < mana.length; i++) {
+                let data = `
+                <div class="row">
+                      <div class="column">
+                        <div class="card">
+                          <h3>${mana[i].ID}</h3>
+                          <p>${mana[i].Name}</p>
+                          <p>${mana[i].Email}</p>
+                          <p>${mana[i].phoneNumber}t</p>
+                        </div>
+                      </div>`
+                  manaHTML.push(data)
+              }
+              return manaHTML
+            }
 }
           function engCards(eng) {
             let engHTML = []
@@ -208,6 +227,7 @@ for (var i = 0; i < teamMember.length; i++) {
             }
             return intHTML
           }
+        }
 
            function generateMarkdown(data) {
             return (
@@ -239,16 +259,46 @@ for (var i = 0; i < teamMember.length; i++) {
                     </div>
                     ${engCards(eng)}
                     ${intCards(int)}
+                    
 
           `);
-        
-          }
+
+            }
           
           module.exports = generateMarkdown
-          
+          module.exports = teamMember => {
               
-             
+          return `
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8" />
+              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+              <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+              <title>My Team</title>
+              <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+                  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+              <link rel="stylesheet" href="style.css">
+              <script src="https://kit.fontawesome.com/c502137733.js"></script>
+          </head>
+          <body>
+              <div class="container-fluid">
+                  <div class="row">
+                      <div class="col-12 jumbotron mb-3 team-heading bg-danger">
+                          <h1 class="text-center text-white">My Team</h1>
+                      </div>
+                  </div>
+              </div>
+              <div class="container">
+                  <div class="row">
+                      <div class="row team-area col-12 d-flex justify-content-center">
+                          ${employeeCards(teamMember)}
+                      </div>
+                  </div>
+              </div>
+          </body>
+          </html>
+              `;
+        
+          };
 
-//create variable that is an empty array "team" i.e
-//after new variables are declared for every employee, push into empty array team.push(manager) i.e **LOWER CASE Variable 
-//Return Html code. See Generate Markdown
